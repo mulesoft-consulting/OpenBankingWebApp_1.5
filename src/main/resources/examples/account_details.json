@@ -1,0 +1,50 @@
+  [{
+    "id": "34f15cd9-ee73-43cf-8f20-a65945326dc0",
+    "label": "Savings Account",
+    "number": "87677",
+    "overdraft": false,
+    "owners": [
+      {
+        "user_id": "190276",
+        "ssn": "123-45-6789",
+        "display_name": "COCA-COLA1234567"
+      }
+    ],
+    "type": "Savings Account",
+    "balance": {
+      "currency": "USD",
+      "amount": null
+    },
+    "available_balance": {
+      "currency": "USD",
+      "amount": 0
+    },
+    "IBAN": "GB15DEMO60161300087677",
+    "swift_bic": "DEMOGBPX",
+    "bank_id": "deutche-test"
+  },
+  {
+    "id": "5c73e565-8069-45f2-bda7-b740c63556cc",
+    "label": "Current Account",
+    "number": "87688",
+    "overdraft": false,
+    "owners": [
+      {
+        "user_id": "190276",
+        "ssn": "123-45-6789",
+        "display_name": "COCA-COLA1234567"
+      }
+    ],
+    "type": "Current Account",
+    "balance": {
+      "currency": "USD",
+      "amount": 44.22
+    },
+    "available_balance": {
+      "currency": "USD",
+      "amount": 44.22
+    },
+    "IBAN": "GB09DEMO60161300087688",
+    "swift_bic": "DEMOGBPX",
+    "bank_id": "deutche-test"
+  }]

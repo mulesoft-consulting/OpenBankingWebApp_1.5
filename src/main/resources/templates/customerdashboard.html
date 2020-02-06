@@ -1,0 +1,201 @@
+<!--
+
+    Mule Anypoint Template
+    Copyright (c) MuleSoft, Inc.
+    All rights reserved.  http://www.mulesoft.com
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <title>Anypoint Bank - Payment</title>
+    <style media="screen">
+        html, body, div, span {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        header {
+            display: block;
+        }
+        body {
+            line-height: 1;
+        }
+        body {
+            font-family: sans-serif;
+            box-sizing: border-box;
+            color: gray;
+            background: #32444D;
+        }
+        .content-container {
+            padding: 0;
+            margin: 0px;
+        }
+        .container {
+            padding: 0;
+            margin: 0 !important;
+            width: 100% !important;
+    		max-width: 100% !important;
+        }
+        header {
+            display: block;
+            height: 100px;
+            background-color: #262728;
+            padding-top: 0.6em;
+            padding-bottom: 1em;
+            padding-left: 1em;
+        }
+        header h1 {
+            font-family: "OpenSans",arial,helvetica,sans-serif;
+    		font-weight: lighter;
+            font-size: 1.5em;
+            color: white;
+        }
+        #box {
+            background: white;
+            width: 50%;
+            padding: 1.8em;
+            margin: 200px auto 0px;
+        }
+        #box h1 {
+            font-size: 1.3em;
+            margin: 1em 0;
+
+        }
+        #box h2 {
+        	font-family: "DINPro",arial,helvetica,sans-serif;
+    		font-weight: lighter;
+            font-size: 1.2em;
+            margin: 1em 0;
+        }
+        .button input {
+            border-width: 0;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            outline: none;
+            background-color: inherit;
+            color: inherit;
+            font-size: 1em;
+        }
+        .button input {
+            cursor: pointer;
+        }
+
+        .button a {
+          display: block;
+          text-align: center;
+          text-decoration: none;
+        }
+
+        .button {
+            width: 7.5em;
+            padding: 0.7em 1em;
+            display: inline-block;
+            background: #00A3E0;
+            border: none;
+            margin-top: 30px;
+            margin-left: 5px;
+            margin-right: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        .button:hover, .button:focus {
+            background: #25c4ff;
+        }
+        .details {
+            width: 100%;
+            border-bottom: 1px solid #c5c5c5;
+            border-top: 1px solid #c5c5c5;
+            padding: 10px;
+            margin-bottom: 40px;
+        }
+        td {
+            padding: 8px 0 8px 5px !important;
+        }
+        .detailsLabel {
+            font-weight: normal;
+        }
+        .title {
+        	font-weight: normal;
+            margin-bottom: 30px !important;
+
+        }
+        }
+        .account {
+            display: flex;
+            padding-left: 15px;
+            border-bottom: 1px solid #c5c5c5;
+            padding-bottom: 40px;
+        }
+        a {
+            color: white !important;
+        }   
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"> 
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+</head>
+<body> 
+<div class="page-container">
+    <div class="container">
+        <header>
+            <h1>Anypoint Bank - Customer Banking Dashboard</h1>
+        </header>
+        
+        <div id="box">
+            <div class="content-container">
+		        	<h2>Customer Details</h2>
+                    <div class="account">
+                         <table class="details">
+                         	<tr>
+      							<td class="detailsLabel">Customer Name:</td>
+      							<td><label for="customer_fname" th:text="*{customerDashboard.customer.firstName + ' ' +customerDashboard.customer.lastName}"></label></td>
+       							<td>&nbsp;&nbsp;</td>
+       						</tr>
+                         	<tr>
+      							<td class="detailsLabel">Customer ID:</td>
+      							<td><label for="customer_id" th:text="*{customerDashboard.customer.customerID}"></label></td>
+      							<td class="detailsLabel">Account Number:</td>
+      							<td><label for="account_number" th:text="*{customerDashboard.account.accountNumber}"></label></td>
+      						</tr>
+                         	<tr>
+      							<td class="detailsLabel">Phone Number:</td>
+      							<td><label for="customer_phone" th:text="*{customerDashboard.customer.phoneNumber}"></label></td>
+      							<td class="detailsLabel">Email Address:</td>
+      							<td><label for="customer_email" th:text="*{customerDashboard.customer.emailAddress}"></label></td>
+      						</tr>
+                         	<tr>
+      							<td class="detailsLabel">Address:</td>
+      							<td><label for="customer_add" th:text="*{customerDashboard.customer.address.address+ ',' +customerDashboard.customer.address.city+ ','+ customerDashboard.customer.address.country}"></label></td>
+      							<td>&nbsp;&nbsp;</td>
+      						</tr>
+    					</table>
+    				</div>
+    				<h2>Account Details</h2>
+                    <div class="account">
+                         <table class="details">
+                         	<tr>
+      							<td class="detailsLabel">Account Type:</td>
+      							<td><label for="account_type" th:text="*{customerDashboard.account.accountType}"></label></td>
+      							<td class="detailsLabel">Current Balance:</td>
+      							<td><label for="account_balance" th:text="*{customerDashboard.account.balance + '  ' + customerDashboard.account.currency}"></label></td>
+      						</tr>
+
+    					</table>
+    				</div>
+    				<br>
+    				<br>
+                     <div class="btn light-blue"><a th:href="@{/customer}">View Customer</a></div>
+                     <div class="btn light-blue"><a th:href="@{/transfer}">Fund Transfer</a></div>
+                     <div class="btn light-blue"><a th:href="@{/logout}">Logout</a></div>
+                </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
